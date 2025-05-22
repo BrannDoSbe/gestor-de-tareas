@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Tareas{% endblock %}
+
+{% block content %}
+<h1>Agenda de tareas</h1>
+
+<ul>
+  {% for task in tasks %}
+    <li>
+      <input type="checkbox" onchange="toggleComplete({{ task.id }})"
+        {% if task.completed %}checked{% endif %}>
+      <span id="task-text-{{ task.id }}" style="color: {% if task.completed %}green{% else %}red{% endif %};">
+        {{ task.content }}
+        {% if task.completed %}
+          (tarea realizada)
+        {% endif %}
+      </span>
+      - <a href="{{ url_for('delete_task', task_id=task.id) }}">Eliminar</a>
+    </li>
+  {% else %}
+    <li>No hay tareas</li>
+  {% endfor %}
+</ul>
+
+<form method="POST" action="{{ url_for('add_task') }}">
+  <input type="text" name="task" size="40" placeholder="Nueva tarea" required>
+  <input type="submit" value="Añadir">
+</form>
+
+{% endblock %}
