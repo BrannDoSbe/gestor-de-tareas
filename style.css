@@ -1,0 +1,139 @@
+/* En tu style.css */
+body {
+  display: flex;              /* activar flexbox */
+  flex-direction: column;     /* para que los elementos estén uno debajo de otro */
+  justify-content: center;    /* centrar verticalmente */
+  align-items: center;        /* centrar horizontalmente */
+  min-height: 100vh;          /* que el body ocupe toda la altura de la ventana */
+  margin: 0;                  /* eliminar margen por defecto */
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+.logo {
+    height: 500px;
+    width: auto;
+}
+
+
+
+header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgb(0, 0, 0);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #0013bd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.completed {
+  text-decoration: line-through;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Puedes cambiar el color de fondo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .nav-left {
+  display: flex;
+  align-items: center;
+}
+
+nav .nav-left img {
+  height: 80px;
+  width: auto;
+  margin-right: 15px;
+}
+
+nav .nav-right a {
+  margin-left: 15px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav .nav-right a:hover {
+  text-decoration: underline;
+}
+.btn-register {
+  background-color: #28a745;   /* verde */
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none; /* si es un <a>, quitar subrayado */
+  transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+  background-color: #218838;  /* verde oscuro al pasar el mouse */
+}
+
