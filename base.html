@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    {% if 'user_id' in session %}
+      <strong>Sesión iniciada como:</strong> {{ session['username'] }}
+    {% endif %}
+  </div>
+
+  <div class="nav-right">
+    {% if 'user_id' in session %}
+      <a href="{{ url_for('task_list') }}">Tareas</a>
+      <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    {% else %}
+      <a href="{{ url_for('login') }}">Iniciar sesión</a>
+      <a href="{{ url_for('register') }}">Registrarse</a>
+    {% endif %}
+  </div>
+</nav>
+
+
+
+{% block content %}{% endblock %}
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+</body>
+</html>
